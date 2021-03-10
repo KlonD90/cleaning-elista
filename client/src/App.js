@@ -12,7 +12,6 @@ import MainPage from "./pages/MainPage";
 import CleanerPage from "./pages/CleanerPage";
 import AdminPage from "./pages/AdminPage";
 
-
 function App() {
   return (
     <div className="App">
