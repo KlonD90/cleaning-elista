@@ -14,7 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   User.init({
+<<<<<<< HEAD
     ID: DataTypes.UUID                        ,
+=======
+>>>>>>> 34f7e98 (base migration)
     name: DataTypes.STRING,
     address: DataTypes.STRING,
     phone_number: DataTypes.STRING

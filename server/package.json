@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "node index.js",
     "dev": "nodemon index.js"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> 34f7e98 (base migration)
   },
   "author": "",
   "license": "ISC",
@@ -13,7 +17,10 @@
     "koa": "^2.13.1",
     "koa-body": "^4.2.0",
     "koa-router": "^10.0.0",
+<<<<<<< HEAD
     "nodemon": "^2.0.7",
+=======
+>>>>>>> 34f7e98 (base migration)
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.5.0",
