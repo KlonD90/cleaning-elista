@@ -5,7 +5,7 @@ import {
     Link
   } from "react-router-dom";
 import {Title} from "../components/Title";
-import AdminLogin from "../components/AdminLogin";
+import AdminLogin from "./AdminLogin";
 
 export default () => {
     return (
