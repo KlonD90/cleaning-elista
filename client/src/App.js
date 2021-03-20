@@ -11,6 +11,7 @@ import {Title} from "./components/Title";
 import MainPage from "./pages/MainPage";
 import CleanerPage from "./pages/CleanerPage";
 import AdminPage from "./pages/AdminPage";
+import { ClientOrderPage } from "./pages/ClientOrderPage";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/" exact={true}>
                     <MainPage />
                 </Route>
+                <Route path="/client/order/:id" component={ClientOrderPage} />
                 <Route path="/cleaner">
                     <CleanerPage />
                 </Route>
