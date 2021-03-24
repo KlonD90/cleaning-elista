@@ -1,0 +1,56 @@
+.admin_form {
+  margin: auto;
+  max-width: 600px;
+  justify-content: right;
+}
+
+.admin_form div {
+  display: flex;
+  justify-content: center;
+}
+
+.admin_form label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.admin_form label span {
+  width: 11%;
+  text-align: right;
+}
+
+.admin_form label input {
+  width: 89%;
+  height: 30px;
+  border: 1px solid #000000;
+  margin: 5px;
+}
+
+.admin_form label.remember {
+  display: flex;
+  justify-content: center;
+}
+
+.admin_form label input.remember {
+  width: 2%;
+}
+
+.admin_form label span.remember {
+  width: 20%;
+}
+
+.admin_form label.button {
+  width: 30%;
+  justify-content: center;
+}
+
+.admin_form input.button {
+  background-color: #ffffff;
+  border: 1px solid #b0bd00;
+}
+
+.admin_form input.photo {
+  border: none;
+}
