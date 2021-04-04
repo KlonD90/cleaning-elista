@@ -1,5 +1,4 @@
-import {Title} from "../components/Title";
-import "../CleanerOrders/CleanerOrders.css"
+
 import {Table} from 'antd';
 import { NavLink } from 'react-router-dom';
 import {
@@ -8,11 +7,11 @@ import {
     Route,
     Link
 } from "react-router-dom";
-
-
+import {Title} from '../../components/Title';
+import "../CleanerOrders/CleanerOrders.css"
 
 export default () => {
-
+{/*
     const dataSource = [
         {
           key: '1',
@@ -46,12 +45,11 @@ export default () => {
         },
       ];
 
+      <Table dataSource={dataSource} columns={columns} />;
+*/}
     return <div>
         <Title>Задания для клинеров:</Title>
-<Table dataSource={dataSource} columns={columns} />;
     
-
-    {/*    
       <table border="1" width="100%" cellpadding="5">
    <tr>
     <th>Адрес</th>
@@ -65,7 +63,7 @@ export default () => {
   </tr>
  </table>
     
-
+{/*
     <Router>
             <Switch>
                 <Route path="/cleanerorderpages" exact={true}>
@@ -74,7 +72,7 @@ export default () => {
                
             </Switch>
         </Router>
-   */}
+*/}
   </div>
 }
 
