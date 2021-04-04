@@ -1,5 +1,5 @@
-import {Title} from "../components/Title";
-import "../CleanerOrderPages/CleanerOrderPages.css"
+import {Title} from '../../components/Title';
+import "../CleanerOrderPages/CleanerOrderPages.css";
 
 
 export default () => {

@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import {Title} from "../components/Title";
 import { NavLink } from 'react-router-dom';
 import { BrowserRouter as Router,  Switch, Route, Link } from "react-router-dom";
-import CleanerOrders from '../CleanerOrders/CleanerOrders.jsx';
+import CleanerOrders from './CleanerOrders/CleanerOrders.jsx';
+import CleanerOrderPages from "./CleanerOrderPages/CleanerOrderPages.jsx";
 
 
 export default () => {
@@ -17,9 +18,9 @@ export default () => {
         <div className="password">
             <input type="text" name="name" placeholder="Password:" />
         </div>
-
+       
         <div> <p> <NavLink to="/cleanerorders"> Log in</NavLink> </p> </div>
-        <div> <p> <NavLink to="/pageslogincleaner"> New password on Email</NavLink> </p> </div>
+        <div> <p> <NavLink to="/CleanerOrderPages"> New password on Email</NavLink> </p> </div>
         </div>
         
 }
