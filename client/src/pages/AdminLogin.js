@@ -1,8 +1,8 @@
-import css from "./../components/admin.module.css";
 import { FormEmail, FormPassword, FormRemember, FormButton } from "./../components/form.js";
 import {$isAuth, $loginError, checkAdmin, login} from '../store/admin';
 import { useStore } from 'effector-react';
 import {Error} from "../components/Error";
+import { Form, Button } from "./../components/admin.js";
 
 const onFinish = (e) => {
   e.preventDefault();
@@ -11,6 +11,7 @@ const onFinish = (e) => {
     password: e.target.pswrd.value,
     remember: e.target.remember.checked,
   };
+  console.log(values);
   login(values);
 }
 
@@ -22,20 +23,16 @@ const AdminLogin = () => {
     <div>
       {
         !isAuthorized &&
-        <form
-        className={css.admin_form}
-        id="form"
-        onSubmit={ onFinish }
-        >
+        <Form onSubmit={ onFinish } >
           <FormEmail />
           <FormPassword />
           <FormRemember />
           {error && <Error>{error}</Error>}
           <FormButton />
-        </form>
+        </Form>
       }
       {isAuthorized && <div>Вы уже авторизованы</div>}
-      <button onClick={checkAdmin} >Send check admin</button>
+      <Button onClick={checkAdmin} >Send check admin</Button>
     </div>
   );
 };
