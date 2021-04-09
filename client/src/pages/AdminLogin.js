@@ -1,94 +1,35 @@
-import { Form, Input, Button, Checkbox } from 'antd';
-import {$isAuth, $loginError, checkAdmin, login} from '../store/admin'
-import { useStore } from 'effector-react'
+import { FormEmail, FormPassword, FormRemember, FormButton } from "./../components/form.js";
+import {$isAuth, $loginError, checkAdmin, login} from '../store/admin';
+import { useStore } from 'effector-react';
 import {Error} from "../components/Error";
+import { Form, Button } from "./../components/admin.js";
+
+const onFinish = (e) => {
+  e.preventDefault();
+  const values = {
+    email: e.target.email.value,
+    password: e.target.pswrd.value,
+    remember: e.target.remember.checked,
+  };
+  console.log(values);
+  login(values);
+}
 
 const AdminLogin = () => {
-  const layout = {
-    labelCol: {
-      span: 4,
-    },
-    wrapperCol: {
-      span: 19,
-    },
-  };
-  
-  const tailLayout = {
-    wrapperCol: {
-      offset: 4,
-      span: 16,
-    },
-  };
+  const error = useStore($loginError);
+  const isAuthorized = useStore($isAuth);
 
-  const onFinish = (values) => {
-    console.log('Success:', values);
-    login(values)
-  };
-
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
-
-  const error = useStore($loginError)
-
-  const isAuthorized = useStore($isAuth)
-
-  return (
+  return(
     <div>
-      {!isAuthorized &&
-      <Form
-          {...layout}
-          className="admin_login_form"
-          name="basic"
-          initialValues={{
-            remember: true,
-          }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-      >
-
-        <Form.Item
-            name="email"
-            label="E-mail"
-            rules={[
-              {
-                type: 'email',
-                message: 'The input is not valid E-mail!',
-              },
-              {
-                required: true,
-                message: 'Please input your E-mail!',
-              },
-            ]}
-        >
-          <Input/>
-        </Form.Item>
-
-        <Form.Item
-            label="Password"
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your password!',
-              },
-            ]}
-        >
-          <Input.Password/>
-        </Form.Item>
-
-        <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item>
-
-        {error && <Error>{error}</Error>}
-
-        <Form.Item {...tailLayout}>
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
+      {
+        !isAuthorized &&
+        <Form onSubmit={ onFinish } >
+          <FormEmail />
+          <FormPassword />
+          <FormRemember />
+          {error && <Error>{error}</Error>}
+          <FormButton />
+        </Form>
       }
       {isAuthorized && <div>Вы уже авторизованы</div>}
       <Button onClick={checkAdmin} >Send check admin</Button>
